@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Suitmedia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="box-area">
+      <header id="navbar">
+        <div class="wrapper">
+          <div class="logo">
+            <a href="#"><img src="img/logoputihnew.png" alt="" height="90" /></a>
+          </div>
+          <nav>
+            <a href="#">Work</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#" class="active">Ideas</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <div class="banner-area">
+        <h2>Ideas</h2>
+        <h3>Where All Our Great Things Begin</h3>
+      </div>
+
+      <div class="content-area">
+        <div class="wrapper">
+          <div class="container">
+            <div class="box-show">
+              <div class="box-show">
+                <span id="showing-info">Showing 1 - 10 of 100</span>
+              </div>
+              <div class="box-show">
+                <div class="select-box">
+                  <span>Show per page:</span>
+                  <select class="show-per-page" id="showPerPage">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                  </select>
+                </div>
+
+                <div class="select-box">
+                  <span>Sort by:</span>
+                  <select class="sort-by" id="sortBy">
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="grid-container" id="gridContainer"></div>
+            <div class="box-pagination" id="pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dist/script.js"></script>
+    <script src="dist/api.js"></script>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins';
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: 90px;
+
+  background: rgb(255, 101, 5);
+  position: fixed;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.logo {
+  width: 30%;
+  float: left;
+  text-align: left;
+  line-height: 100px;
+}
+
+#navbar {
+  transition: top 0.3s, background-color 0.3s;
+  background-color: rgb(255, 101, 5); /* Warna navbar tanpa transparansi */
+}
+
+#navbar.transparent {
+  background-color: rgba(255, 101, 5, 0.646); /* Warna navbar dengan transparansi */
+}
+
+#navbar:hover {
+  background-color: rgb(255, 101, 5); /* Warna navbar tanpa transparansi saat di-hover */
+}
+
+nav {
+  float: right;
+  line-height: 90px;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: 'Poppins';
+  letter-spacing: 4px;
+  font-size: 15px;
+  color: #ffff;
+  padding: 32px 8px;
+  margin: 0 1px;
+}
+
+.active {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+nav a:hover {
+  background: #fff;
+  color: rgb(255, 101, 5);
+}
+
+.banner-area {
+  background-image: url(img/banner-fix.jpg);
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  height: 450px;
+  width: 100%;
+
+  position: absolute;
+  rotate: -5deg;
+  bottom: 30px;
+  transform: scale(1.1);
+}
+
+.banner-area:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #5a5a5a;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.banner-area h2 {
+  padding-top: 15%;
+  font-size: 50px;
+  color: #fff;
+  rotate: 5deg;
+}
+
+.banner-area h3 {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 200;
+  rotate: 5deg;
+}
+
+.content-area {
+  top: 550px;
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  background: #fff;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the minimum width for better sizing */
+  gap: 16px;
+}
+
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: #5a5a5a;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; /* Ensure consistent thumbnail ratio */
+  object-fit: cover;
+  display: block;
+  lazyload: true;
+  border-radius: 20px; /* Match the card's border-radius */
+}
+
+.grid-item-date {
+  color: #959595; /* Warna biru, sesuaikan kode warna sesuai kebutuhan */
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: left;
+}
+.grid-item-title {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4em;
+  max-height: 4.2em; /* Adjust the max height for 3 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.box-show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 2px;
+}
+
+.show-per-page,
+.sort-by {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem; /* Ensure consistent font size */
+}
+.box-pagination {
+  display: flex;
+  justify-content: center; /* Center-align the pagination */
+  align-items: center;
+  margin: 24px 0; /* Add vertical margin to create space between pagination and other elements */
+  padding: 30px 0;
+}
+
+.box-pagination span {
+  cursor: pointer;
+  padding: 8px 12px; /* Increase padding for better click area */
+  margin: 0 4px; /* Reduce spacing between pagination numbers */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+}
+
+.box-pagination span.active {
+  background-color: rgb(255, 101, 5);
+  color: #fff;
+  border-color: rgb(114, 44, 0);
+}
+
+/* Gaya umum untuk select box */
+.select-box select {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none; /* Menghilangkan gaya default dari browser untuk <select> */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Gaya untuk teks di dalam select box */
+.select-box span {
+  margin-right: 10px;
+}
+
+/* Menambahkan ikon panah ke bawah menggunakan pseudo-element */
+.select-box select {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+/* Mengatur padding untuk menghindari teks tertutup oleh ikon */
+.select-box select {
+  padding-right: 30px;
+}
